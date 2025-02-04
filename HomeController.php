@@ -161,45 +161,45 @@ AX5RTXcpkX8CgIPRAKaMxK7xqwht3rN0hqBqZ3IR5kpk/Ifsk1iwsFuEyvclYw==";
     public function decryptAESKey(Request $request)
     {
         $encryptedData = $this->decodeBase64($request->key);
-        // // $privateKeyPath = '/etc/letsencrypt/live/vpnapimon.tohapp.com/privkey.pem';
+//         // // $privateKeyPath = '/etc/letsencrypt/live/vpnapimon.tohapp.com/privkey.pem';
 
-        $key = "-----BEGIN PRIVATE KEY-----
-MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCr0ROoMnJamA9f
-GnvH0RDP2GcFf7lkK5ia/QRBTt99OVQfGvfjV2eHroV29wd5I5cJUcFcYveE9E1J
-PyjURRzh1Ed42jAqaQ57EZf9qX+u8oOZ/pEfCxWhG2nduRmVVVF9QYFPH5/k8flb
-JjGpt+utlSPUCxjekUY9/wFtdO93Bu+6vHoPLR/8ENlS2gB51XzTt4VCDemkLyWZ
-LJqOzFfTKRYRbQdfa/c8oDOdrIsvut9vNQ3Z7fdt4AuBocXi692dZbmkVzMPW5T9
-PRk75HjNCZU2EErDBfGVO91AFlgPVB/obxxtFNsxqpReLmMZzDKu8hxMxK31st8t
-SQXdpyO5AgMBAAECggEAEPGibaDj9Bkw0uEquc7dSJH/vuQUpVNDTm2LQOGFWrUP
-na2sKohRFmlYkh3UZ9bhqzKbzf+Yh00MXh/TZ/OU4JRto/Zob5ZCrlJS2dogVGFo
-JwSazSPrsyKf8xSw+DAcxCx0kxf8TbirLZj7ptATdt/RU7Twc+qBsdV3D5NLlkI4
-dFP99BHXZz1fM2JB4ISuwF0CqdFZz9hoB6Tq5NbempePV8Pm6yjrh2UH5FwG3FSl
-/tUA2jWfMS7st12xJNUggOtyqKez5C5AnrIACzS2EZWkTaWh4g6zY6f8dRNBOvDC
-8QcQ7E263M6sQdnu7ZnKKB/TBQ/1yVnQ+WrJkjWcgQKBgQDbHIaGFbuMgLBIps13
-+/Taqq01RrxubUHbDjg5SbzJUNqFnq4k0OVqOAviT8UMLJN58VQb9unmGc8iY3NA
-Q56mgQdVcgO6TzDoRX+g+DqvLAdgIaW+QSbkGHa6y73jtn+X6Cd8fCFOlLAjc5W5
-vn8W2dmeHj2sz25ZNTX6pgrq8QKBgQDIvjKxoAMf21yB6Dz3Sj5M9Qqq+Q9Y3WZD
-7QgBWAD2bXcqy71kb46Qfbl143mmDb/Nm4v0QUTkvDJEK4OftF0LxokbllPEVNFS
-fO8msvALh0YGNabQfZH+TXXzFBCW9V6d38yZCM91ONKhYN1Qh5ixwo8UbWOto5wW
-nadsdcp1SQKBgBkrJaixRmHVRmqR/ngR0QZtJIhCH9LvaeknsP2jorPdPbyrhYVl
-GXUiCvtr/k5vsGEJf4fWzPdJb6mbktmG6uplV9pQxmzYO93yXb63xMXqYM6CDu/T
-vAvnY3wBe0Z06CMi36ZE++5y1ei8li5H24FcdMrc3mjDSwGkQxcPi6GBAoGAIC72
-G6omthXKJ/2ewJrDkDz8/9o8Tqf4PE2lKen9BYUZROAzNgX4mku9zxuwJiIwLPuS
-HY/VRsKxYGKFkLYu8LNcyfJ47ZIXmRz0joTDnWWLoXU6kFSBcn7iuRzvZ/Rgvfji
-aWqTMBzzD/JiqQWEQoOJwuGiyHThknKmI+pikhkCgYEAv1Ati6GcQAGTaL4IEL8L
-cthZbzgAEXcxkTDPtGKuafIWT7rgksd99eTnGVszVvJaE0oFC+h62H63Jr3TLxUK
-gWOWGD0D178sda4Jtw14FJTWdLUoqp2zyszjsmfRBnKbN19CTu/ix/qNHXJZ7pnp
-r5ooA9lrf7A+Kgf6kiEM1kU=
------END PRIVATE KEY-----";
-        $decodedKey = '';
-        $decryptionSuccess = openssl_private_decrypt(
-            $encryptedData,
-            $decodedKey,
-            $key,
-            OPENSSL_PKCS1_PADDING
-        );
+//         $key = "-----BEGIN PRIVATE KEY-----
+// MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCr0ROoMnJamA9f
+// GnvH0RDP2GcFf7lkK5ia/QRBTt99OVQfGvfjV2eHroV29wd5I5cJUcFcYveE9E1J
+// PyjURRzh1Ed42jAqaQ57EZf9qX+u8oOZ/pEfCxWhG2nduRmVVVF9QYFPH5/k8flb
+// JjGpt+utlSPUCxjekUY9/wFtdO93Bu+6vHoPLR/8ENlS2gB51XzTt4VCDemkLyWZ
+// LJqOzFfTKRYRbQdfa/c8oDOdrIsvut9vNQ3Z7fdt4AuBocXi692dZbmkVzMPW5T9
+// PRk75HjNCZU2EErDBfGVO91AFlgPVB/obxxtFNsxqpReLmMZzDKu8hxMxK31st8t
+// SQXdpyO5AgMBAAECggEAEPGibaDj9Bkw0uEquc7dSJH/vuQUpVNDTm2LQOGFWrUP
+// na2sKohRFmlYkh3UZ9bhqzKbzf+Yh00MXh/TZ/OU4JRto/Zob5ZCrlJS2dogVGFo
+// JwSazSPrsyKf8xSw+DAcxCx0kxf8TbirLZj7ptATdt/RU7Twc+qBsdV3D5NLlkI4
+// dFP99BHXZz1fM2JB4ISuwF0CqdFZz9hoB6Tq5NbempePV8Pm6yjrh2UH5FwG3FSl
+// /tUA2jWfMS7st12xJNUggOtyqKez5C5AnrIACzS2EZWkTaWh4g6zY6f8dRNBOvDC
+// 8QcQ7E263M6sQdnu7ZnKKB/TBQ/1yVnQ+WrJkjWcgQKBgQDbHIaGFbuMgLBIps13
+// +/Taqq01RrxubUHbDjg5SbzJUNqFnq4k0OVqOAviT8UMLJN58VQb9unmGc8iY3NA
+// Q56mgQdVcgO6TzDoRX+g+DqvLAdgIaW+QSbkGHa6y73jtn+X6Cd8fCFOlLAjc5W5
+// vn8W2dmeHj2sz25ZNTX6pgrq8QKBgQDIvjKxoAMf21yB6Dz3Sj5M9Qqq+Q9Y3WZD
+// 7QgBWAD2bXcqy71kb46Qfbl143mmDb/Nm4v0QUTkvDJEK4OftF0LxokbllPEVNFS
+// fO8msvALh0YGNabQfZH+TXXzFBCW9V6d38yZCM91ONKhYN1Qh5ixwo8UbWOto5wW
+// nadsdcp1SQKBgBkrJaixRmHVRmqR/ngR0QZtJIhCH9LvaeknsP2jorPdPbyrhYVl
+// GXUiCvtr/k5vsGEJf4fWzPdJb6mbktmG6uplV9pQxmzYO93yXb63xMXqYM6CDu/T
+// vAvnY3wBe0Z06CMi36ZE++5y1ei8li5H24FcdMrc3mjDSwGkQxcPi6GBAoGAIC72
+// G6omthXKJ/2ewJrDkDz8/9o8Tqf4PE2lKen9BYUZROAzNgX4mku9zxuwJiIwLPuS
+// HY/VRsKxYGKFkLYu8LNcyfJ47ZIXmRz0joTDnWWLoXU6kFSBcn7iuRzvZ/Rgvfji
+// aWqTMBzzD/JiqQWEQoOJwuGiyHThknKmI+pikhkCgYEAv1Ati6GcQAGTaL4IEL8L
+// cthZbzgAEXcxkTDPtGKuafIWT7rgksd99eTnGVszVvJaE0oFC+h62H63Jr3TLxUK
+// gWOWGD0D178sda4Jtw14FJTWdLUoqp2zyszjsmfRBnKbN19CTu/ix/qNHXJZ7pnp
+// r5ooA9lrf7A+Kgf6kiEM1kU=
+// -----END PRIVATE KEY-----";
+//         $decodedKey = '';
+//         $decryptionSuccess = openssl_private_decrypt(
+//             $encryptedData,
+//             $decodedKey,
+//             $key,
+//             OPENSSL_PKCS1_PADDING
+//         );
         //return $decodedKey;
-        return "qjtkdCMu2tNkyF+7avX/V8gGMX31at6r+tf3A3FiGUg=";
+        return $this->decodeBase64("qjtkdCMu2tNkyF+7avX/V8gGMX31at6r+tf3A3FiGUg=");
     }
     
     // public function getListVpnEC(Request $request)
@@ -244,7 +244,6 @@ r5ooA9lrf7A+Kgf6kiEM1kU=
             }
         }
 
-        $msg = 'OK!';
         // Tạo phản hồi JSON
         $response = [
             'code' => 0,
@@ -260,7 +259,6 @@ r5ooA9lrf7A+Kgf6kiEM1kU=
         list($encryptedData, $encodedIV, $tagRes) = $this->encryptData($request->sdk_v, $resJson, $keyAES, $tag);
 
         return response()->json([
-            'id' => $request->iv,
             'encryptedData' => $encryptedData,
             'iv' => $encodedIV,
             'tag' => $tagRes
