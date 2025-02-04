@@ -210,8 +210,8 @@ r5ooA9lrf7A+Kgf6kiEM1kU=
     //         if ($vpn->max_connection == 0) {
     //             $vpn->quality = 100;
     //         } else {
-	// 	    //$vpn->quality = 100 - ((int)($vpn->current_connection * 100 / $vpn->max_connection));
-	// 	    $vpn->quality = 100 - ((int)($vpn->cpu));
+    //      //$vpn->quality = 100 - ((int)($vpn->current_connection * 100 / $vpn->max_connection));
+    //      $vpn->quality = 100 - ((int)($vpn->cpu));
     //         }
     //     }
     //     $response = [
@@ -239,8 +239,8 @@ r5ooA9lrf7A+Kgf6kiEM1kU=
             if ($vpn->max_connection == 0) {
                 $vpn->quality = 100;
             } else {
-		    //$vpn->quality = 100 - ((int)($vpn->current_connection * 100 / $vpn->max_connection));
-		    $vpn->quality = 100 - ((int)($vpn->cpu));
+            //$vpn->quality = 100 - ((int)($vpn->current_connection * 100 / $vpn->max_connection));
+            $vpn->quality = 100 - ((int)($vpn->cpu));
             }
         }
 
@@ -275,8 +275,8 @@ r5ooA9lrf7A+Kgf6kiEM1kU=
             if ($vpn->max_connection == 0) {
                 $vpn->quality = 100;
             } else {
-		    //$vpn->quality = 100 - ((int)($vpn->current_connection * 100 / $vpn->max_connection));
-		    $vpn->quality = 100 - ((int)($vpn->cpu));
+            //$vpn->quality = 100 - ((int)($vpn->current_connection * 100 / $vpn->max_connection));
+            $vpn->quality = 100 - ((int)($vpn->cpu));
             }
         }
         return response()->json([
@@ -294,8 +294,8 @@ r5ooA9lrf7A+Kgf6kiEM1kU=
             if ($vpn->max_connection == 0) {
                 $vpn->quality = 100;
             } else {
-		    //$vpn->quality = 100 - ((int)($vpn->current_connection * 100 / $vpn->max_connection));
-		    $vpn->quality = 100 - ((int)($vpn->cpu));
+            //$vpn->quality = 100 - ((int)($vpn->current_connection * 100 / $vpn->max_connection));
+            $vpn->quality = 100 - ((int)($vpn->cpu));
             }
         }
         return response()->json([
@@ -331,12 +331,12 @@ r5ooA9lrf7A+Kgf6kiEM1kU=
             ], 200);
         }
         $msg = 'OK!';
-	//$vpn->quality = 100 - ((int)($vpn->current_connection * 100 / $vpn->max_connection));
-	if ($vpn->max_connection == 0) {
+    //$vpn->quality = 100 - ((int)($vpn->current_connection * 100 / $vpn->max_connection));
+    if ($vpn->max_connection == 0) {
             $vpn->quality = 100;
         } else {
-		//$vpn->quality = 100 - ((int)($vpn->current_connection * 100 / $vpn->max_connection));
-	    $vpn->quality = 100 - ((int)$vpn->cpu);
+        //$vpn->quality = 100 - ((int)($vpn->current_connection * 100 / $vpn->max_connection));
+        $vpn->quality = 100 - ((int)$vpn->cpu);
         }
         return response()->json([
             'code' => 0,
@@ -735,8 +735,8 @@ r5ooA9lrf7A+Kgf6kiEM1kU=
     {
         $msg = 'Ok';
         $code = 200;
-	//$order_id = $request->order_id;
-	//
+    //$order_id = $request->order_id;
+    //
         $dataEncrypted = $this->decodeBase64($request->data);
         $keyAES = $this->decryptAESKey($request);
         $iv = $this->decodeBase64($request->iv);
@@ -755,7 +755,7 @@ r5ooA9lrf7A+Kgf6kiEM1kU=
         
         if(!empty($data['order_id'])) {
             $order_id = $data['order_id'];
-	}
+    }
 
         $orderidInDb = User::where('order_id', $order_id)->first();
         if ($orderidInDb != null && $orderidInDb->endSub == 1) {
@@ -839,8 +839,8 @@ r5ooA9lrf7A+Kgf6kiEM1kU=
         $msg = 'Ok';
         $code = 200;
         //$order_id = $request->order_id;
-	//$device_id = $request->device_id;
-	//
+    //$device_id = $request->device_id;
+    //
         $dataEncrypted = $this->decodeBase64($request->data);
         $keyAES = $this->decryptAESKey($request);
         $iv = $this->decodeBase64($request->iv);
@@ -858,7 +858,7 @@ r5ooA9lrf7A+Kgf6kiEM1kU=
         
         if(!empty($data['order_id'])) {
             $order_id = $data['order_id'];
-	}
+    }
 
         if (empty($order_id)) {
             $configVpn = ConfigVpn::where('device_id', 'like', $device_id)->first();
@@ -928,8 +928,8 @@ r5ooA9lrf7A+Kgf6kiEM1kU=
         $code = 0;
         //$vpn_id = $request->vpn_id;
         //$order_id = $request->order_id;
-	//$device_id = $request->device_id;
-	//
+    //$device_id = $request->device_id;
+    //
         $dataEncrypted = $this->decodeBase64($request->data);
         $keyAES = $this->decryptAESKey($request);
         $iv = $this->decodeBase64($request->iv);
@@ -990,19 +990,19 @@ r5ooA9lrf7A+Kgf6kiEM1kU=
         $code = 0;
         $vpn_id = $request->vpn_id;
         $order_id = $request->order_id;
-	$device_id = $request->device_id;
-	//Log::info('connectSuccess.', ['order_id' => $order_id, 'device_id' => $request->device_id]);
+    $device_id = $request->device_id;
+    //Log::info('connectSuccess.', ['order_id' => $order_id, 'device_id' => $request->device_id]);
         //kill and remove all config of other device
-	$currentConfig = ConfigVpn::where('order_id', $order_id)->where('device_id', $device_id)->where('status', 1)->first();
-	//$currentConfig = ConfigVpn::where('order_id', $order_id)->where('status', 1)->first();
+    $currentConfig = ConfigVpn::where('order_id', $order_id)->where('device_id', $device_id)->where('status', 1)->first();
+    //$currentConfig = ConfigVpn::where('order_id', $order_id)->where('status', 1)->first();
         if ($currentConfig != null && $currentConfig->status == 1) {
             $configs = ConfigVpn::where('order_id', $order_id)->where('device_id', 'not like', $device_id)->get();
             foreach ($configs as $config) {
                 $vpnIp = Vpn::where('id', $config->vpn_id)->where('vpn_type', 1)->select('ip')->first();
                 //$resDel = $this->deleteConnectVpn($vpnIp->ip, $config->device_id);
-		$resKill = $this->killConnectVpn($vpnIp->ip, $config->device_id);
-		$resDel = $this->deleteConnectVpn($vpnIp->ip, $config->device_id);
-		//Log::info('killConnectVpn.', ['ip' => $vpnIp->ip, 'device_id' => $config->device_id]);
+        $resKill = $this->killConnectVpn($vpnIp->ip, $config->device_id);
+        $resDel = $this->deleteConnectVpn($vpnIp->ip, $config->device_id);
+        //Log::info('killConnectVpn.', ['ip' => $vpnIp->ip, 'device_id' => $config->device_id]);
 
             }
             ConfigVpn::where('order_id', $order_id)->where('device_id', 'not like', $device_id)->delete();
@@ -1105,19 +1105,19 @@ r5ooA9lrf7A+Kgf6kiEM1kU=
     public function updateNumberConnect(Request $request)
     {
         $vpn = Vpn::where('id', $request->id)->first();
-	if ($vpn) {
-	    $currentTimestamp = Helper::getTimeInMiliSecound();
-	    $vpnHistoryLast = VpnHistory::where('vpn_id', $vpn->id)
+    if ($vpn) {
+        $currentTimestamp = Helper::getTimeInMiliSecound();
+        $vpnHistoryLast = VpnHistory::where('vpn_id', $vpn->id)
                             ->orderBy('datetime', 'desc')
                             ->first();
-	    $recordedAt = $vpnHistoryLast ? $vpnHistoryLast->datetime : 0;
-	    if($request->cpu > 90 && (($currentTimestamp - $recordedAt) >= 1800000)) {
-		    $pythonScript = "python3  /var/www/html/send_msg_telegram_bot.py $vpn->city $vpn->ip  $request->cpu $request->ram  $request->current_connection $vpn->max_connection";
-		    if ($vpn->type == 1) {
-        		$pythonScript .= " --paid";
-		    }
-		    $output = shell_exec($pythonScript);
-	    }
+        $recordedAt = $vpnHistoryLast ? $vpnHistoryLast->datetime : 0;
+        if($request->cpu > 90 && (($currentTimestamp - $recordedAt) >= 1800000)) {
+            $pythonScript = "python3  /var/www/html/send_msg_telegram_bot.py $vpn->city $vpn->ip  $request->cpu $request->ram  $request->current_connection $vpn->max_connection";
+            if ($vpn->type == 1) {
+                $pythonScript .= " --paid";
+            }
+            $output = shell_exec($pythonScript);
+        }
 
             if (!$vpnHistoryLast || ($currentTimestamp - $recordedAt) >= 1800000) {
                 $vpnHistory = new VpnHistory;
@@ -1126,8 +1126,8 @@ r5ooA9lrf7A+Kgf6kiEM1kU=
                 $vpnHistory->ip = $vpn->ip;
                 $vpnHistory->datetime = Helper::getTimeInMiliSecound();
                 $vpnHistory->cpu = $request->cpu;
-		$vpnHistory->ram = $request->ram;
-		$vpnHistory->connections  = $request->current_connection;
+        $vpnHistory->ram = $request->ram;
+        $vpnHistory->connections  = $request->current_connection;
                 $vpnHistory->save();
             }
             $vpn->current_connection = $request->current_connection;
